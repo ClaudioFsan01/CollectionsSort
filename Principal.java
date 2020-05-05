@@ -35,17 +35,20 @@ public class Principal {
           java.lang.Comparable , que define o método int compareTo(Object) . Este método deve retornar
           zero, se o objeto comparado for igual a este objeto, um número negativo, se este objeto for menor que o
           objeto dado, e um número positivo, se este objeto for maior que o objeto dado.
-		  * */
+		   */
 		 List<ContaCorrente> listaContas = new ArrayList<>();
 		 
 		 ContaCorrente cc1 = new ContaCorrente();
 		 ContaCorrente cc2 = new ContaCorrente();
 		 ContaCorrente cc3 = new ContaCorrente();
 		 ContaCorrente cc4 = new ContaCorrente();
+		 ContaCorrente cc5 = null;
+		 
+		
 		 
 		 cc1.deposita(1000);
 		 cc2.deposita(900);
-		 cc3.deposita(1500);
+		 cc3.deposita(1500);   
 		 cc4.deposita(600);
 		 
 		 listaContas.add(cc1);
@@ -53,25 +56,56 @@ public class Principal {
 		 listaContas.add(cc3);
 		 listaContas.add(cc4);
 		 
-		 for(ContaCorrente conta : listaContas) {
-			 System.out.println(" Saldo : "+ conta.getSaldo());
-		 }
+		 mostrarLista(listaContas);
 		 
-		 
-		 Collections.sort(listaContas);		
-		 
-		 System.out.println("-------------- \n");
-		 
-		 for(ContaCorrente conta : listaContas) {
-			 System.out.println(" Saldo : "+ conta.getSaldo());
-		 }
+		 Collections.sort(listaContas);	
 		 
 		 /* O método de ordenação sort() da classe Collections inicia apartir do 2° elemento da lista acessa o metodo  compareTo(ContaCorrente cc)
 		  do elemento atual e passa no parametro o elemento do index anterior da lista para que seja comparado no metodo compareTo(ContaCorrente cc)
 		  o elemento atual com elemento anterior. O criterio de comparação , ou seja, o que vai ser comparado dentro do método compareTo(ContaCorrente cc)
 		  é definido pelo programador.*/
+		 
+		 System.out.println("-------------- \n");
+		 
+		 mostrarLista(listaContas);
+		 
 		
 		 
+		    int n = Collections.binarySearch(listaContas, cc1);
 		 
+		  if(n== -1) {			  /*Realiza uma busca binária por determinado elemento na
+			   lista ordenada e retorna sua posição ou um número negativo, caso não encontrado.*/
+			   
+			   System.out.println(" Elemento não encontrado na lista ! \n");
+		  }else {
+			  System.out.println(" Elemento não posição : "+ (n) +" na lista ! \n");			  
+			  
+		  }
+		  
+		  
+		   ContaCorrente conta = Collections.max(listaContas); // retorna o o elemento máximo da coleção fornecida, de acordo com a ordem natural de seus elementos.
+		   
+		   
+		   System.out.println(" Elemento maximo da lista : "+ conta.getSaldo());	
+		   
+		    conta = Collections.min(listaContas); // retorna o o elemento minimo da coleção fornecida, de acordo com a ordem natural de seus elementos.
+		   
+		    System.out.println(" Elemento minimo da lista : "+ conta.getSaldo());	
+		    
+		    Collections.reverse(listaContas); // inverte a lista 
+		    
+		    System.out.println("\n Lista invertida ! \n");	
+		    mostrarLista(listaContas);	
+		 		 
+	}
+	
+	
+	public static void mostrarLista(List<ContaCorrente> listaContas) {
+		
+		 for(ContaCorrente conta : listaContas) {
+			 System.out.println(" Saldo : "+ conta.getSaldo());
+		 }
+		 
+		
 	}
 }

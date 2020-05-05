@@ -65,6 +65,8 @@ public class ContaCorrente implements java.lang.Comparable<ContaCorrente>{
 
    }
 	
+	
+	
 	//Com o código anterior, nossa classe tornou-se "comparável"
 	
 	/*Repare que o critério de ordenação é totalmente aberto, definido pelo programador. Se quisermos
@@ -73,12 +75,7 @@ public class ContaCorrente implements java.lang.Comparable<ContaCorrente>{
 	 
 	  Quando chamarmos o método sort de Collections , ele saberá como fazer a ordenação da lista;
      ele usará o critério que definimos no método compareTo .
-	 * */
-	
-	
-	
-	
-	
+	 * */	
 	
 	
 }
