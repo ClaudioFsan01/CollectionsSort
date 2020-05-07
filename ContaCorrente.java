@@ -4,6 +4,15 @@ public class ContaCorrente implements java.lang.Comparable<ContaCorrente>{
 	   //A classe ContaCorrente se compromete a implementar o método abstrato compareTo(Objeto) da interface Comparable<tipo Objeto>
 	
 	private double saldo;
+	private String titular;
+	
+	public void setTitular(String titular) {
+		this.titular = titular;
+	}
+	
+	public String getTitular() {
+		return this.titular;
+	}
 	
 	public double getSaldo() {
 		return this.saldo;
@@ -50,6 +59,10 @@ public class ContaCorrente implements java.lang.Comparable<ContaCorrente>{
 	// Caso o saldo do elemento atual seja inferior ao saldo do elemento anterior esses elementos são trocados de posição na lista criando assim 
 	// uma lista de elementos de saldo crescente
 	
+	
+	//Ordenando a lista pelo saldo da conta
+	
+	/*
 	public int compareTo(ContaCorrente cc)
 	{
 		if(this.getSaldo() == cc.getSaldo()) {
@@ -63,7 +76,24 @@ public class ContaCorrente implements java.lang.Comparable<ContaCorrente>{
 		
 	  }
 
-   }
+   }*/
+	
+	//Ordenando a lista pelo titular da conta
+	
+	public int compareTo(ContaCorrente outraConta) {
+		
+		/* A classe String implementa a interface Comparable<>* e seu criador implementou o metodo compareTo() na classe String.
+		 * Neste contexto vou comparar pelo nome do titular, portanto necessito passar a String Titular da outra conta, que será comparada com a String Titular da conta atual, para o parametro do metodo compareTo() implementado na classe String*/
+		
+		return this.getTitular().compareTo(outraConta.getTitular())	; /* Nesse caso a String Titular do objeto atual apontado pela palavra this será comparada com a String
+		                                                                 do objeto apontado pela variavel outraConta*/
+		/*Agora como podemos ver o método compareTo() que está sendo acessado é da classe String uma vez q titular é do tipo String , portanto esse método recebe como parametro
+		 uma String e estamos passando uma String no parametro conforme o exemplo : 
+		 * this.getTitular().compareTo(outraConta.getTitular())*/
+		
+	}
+	
+	
 	
 	
 	

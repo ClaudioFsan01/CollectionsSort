@@ -45,10 +45,16 @@ public class Principal {
 		 ContaCorrente cc5 = null;
 		 
 		
-		 
+		 cc1.setTitular("Zuila");
 		 cc1.deposita(1000);
+		 
+		 cc2.setTitular("Fatima");
 		 cc2.deposita(900);
+		 
+		 cc3.setTitular("Claudio");
 		 cc3.deposita(1500);   
+		 
+		 cc4.setTitular("Ana");
 		 cc4.deposita(600);
 		 
 		 listaContas.add(cc1);
@@ -103,7 +109,7 @@ public class Principal {
 	public static void mostrarLista(List<ContaCorrente> listaContas) {
 		
 		 for(ContaCorrente conta : listaContas) {
-			 System.out.println(" Saldo : "+ conta.getSaldo());
+			 System.out.println("Titular : "+ conta.getTitular()+" Saldo : "+ conta.getSaldo());
 		 }
 		 
 		
